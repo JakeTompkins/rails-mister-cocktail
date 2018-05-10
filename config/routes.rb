@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   end
   delete "/doses/:id", to: "doses#destroy"
 
-  root to: 'pages#home'
+  root to: 'cocktails#index'
 end

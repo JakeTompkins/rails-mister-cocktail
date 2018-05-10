@@ -1,0 +1,6 @@
+<div class="card" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(/assets/<%= cocktail.name%>.jpeg);">
+  <div class="card-description">
+    <h2><%= cocktail.name %></h2>
+  </div>
+  <%= link_to 'Check it out', cocktail_path(cocktail.id), class: "card-link" %>
+</div>

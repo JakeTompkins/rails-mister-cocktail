@@ -21,3 +21,13 @@ drinks.each do |d|
 end
 
 puts "created #{Ingredient.all.count} ingredients"
+
+Cocktail.destroy_all
+puts "Cocktails destroyed"
+
+%w[test1 test2 test3 test4 test5].each do |c|
+  Cocktail.create(name:c)
+end
+
+puts "created #{Cocktail.all.count} cocktails"
+

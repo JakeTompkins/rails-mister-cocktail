@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <%= render partial: '/components/banner' %>
+  <div class="container" id="browse-box">
+    <form action="#" method="get", class="form-inline" id="search-bar">
+      <input type="text" name="seach_phrase" placeholder="Name of a cocktail or ingredient" class="form-control input-lg" id="search-bar">
+    </form>
+    <div class="row">
+      <% @cocktails.each do |c| %>
+        <div class="col-xs-12 col-sm-6"><%= render partial: '/components/cocktail-card', locals: { cocktail: c } %></div>
+      <% end %>
+    </div>
+  </div>
+</div>
