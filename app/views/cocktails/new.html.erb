@@ -1,13 +1,21 @@
-<%= simple_form_for(@cocktail) do |f| %>
-    <%= f.input :name %>
-	<ul>
-	<%= f.simple_fields_for :doses, @cocktail.doses do |d| %>
-		<li>
-      <%= d.input :ingredient_id, collection: Ingredient.all %>
-			<%= d.input :description, placeholder: "1 shot, 5oz, a shitload?" %>
-		</li>
-	<% end %>
-	</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
 
-	<%= f.button :submit %>
-<% end %>
+    <%= simple_form_for(@cocktail) do |f| %>
+        <%= f.input :name %>
+      <ul>
+      <%= f.simple_fields_for :doses, @cocktail.doses do |d| %>
+        <li>
+          <%= d.input :ingredient_id, collection: Ingredient.all %>
+          <%= d.input :description, placeholder: "1 shot, 5oz, a shitload?" %>
+        </li>
+      <% end %>
+      </ul>
+
+      <%= f.button :submit %>
+    <% end %>
+
+    </div>
+  </div>
+</div>

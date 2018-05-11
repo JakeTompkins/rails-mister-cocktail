@@ -1,0 +1,45 @@
+li {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px white;
+}
+
+li span{
+  display: block;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+  color: lightgrey;
+}
+
+.card {;
+  height: 309px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: white;
+  position: relative;
+}
+
+.card-description {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+.card-description h2 {
+  margin:0;
+  font-size:48px;
+}
+
+.card-list {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 15px;
+  bottom: 5px;
+  right: 5px;
+}
+
+

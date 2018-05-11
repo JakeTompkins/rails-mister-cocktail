@@ -1,0 +1,12 @@
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(/assets/images/<%= cocktail.name%>.jpeg)">
+  <div class="card-description">
+    <h2><%= cocktail.name %></h2>
+  </div>
+   <ul class="card-list">
+      <% @cocktail.doses.each do |dose| %>
+        <li><span><h3><%=dose.ingredient.name%></h3><p><%= dose.description %></p></span>
+      <%= link_to 'Delete', cocktail_dose_path(@cocktail, dose), method: :Delete %>
+        </li>
+    <% end %>
+    </ul>
+</div>
