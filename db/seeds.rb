@@ -17,7 +17,6 @@ json = JSON.parse(drinks_json)
 drinks = json["drinks"]
 drinks.each do |d|
   Ingredient.create(name:d.values[0])
-  puts "#{Ingredient.last.name} created"
 end
 
 puts "created #{Ingredient.all.count} ingredients"
@@ -31,3 +30,14 @@ end
 
 puts "created #{Cocktail.all.count} cocktails"
 
+
+Dose.destroy_all
+puts "Doses destroyed"
+
+Cocktail.all.each do |cocktail|
+  3.times do
+    Dose.create(description: "1 shot", cocktail: cocktail, ingredient: Ingredient.all.sample)
+  end
+end
+
+puts "Created #{Dose.all.count} doses"

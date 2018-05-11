@@ -7,11 +7,16 @@ class DosesController < ApplicationController
   def create
     @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredient = Ingredient.find(params[:ingredient_id])
-    Dose.create(dose_params)
+    @dose = Dose.new(dose_params)
+    unless @dose.save
+      redirect_to cocktail_path(@cocktail)
+    end
   end
 
   def destroy
+    @cocktail = Cocktail.find(params[:cocktail_id])
     @dose.destroy
+    redirect_to cocktail_path(@cocktail)
   end
 
   private
