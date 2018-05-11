@@ -9,6 +9,8 @@
               <%= d.input :ingredient_id, collection: Ingredient.all, label: false, prompt: "Select an ingredient" %>
               <%= d.input :description, placeholder: "1 shot, 5oz, a shitload?", label: false %>
           <% end %>
+          <%= f.input :photo, label: false, class: "btn", style: "background: transparent; border: solid 1px white; color: white;" %>
+          <%= f.input :photo_cache, as: :hidden %>
           <%= f.button :submit, id: "submit-button", value: "Add ingredient" %>
       <% end %>
     </div>

@@ -24,8 +24,11 @@ puts "created #{Ingredient.all.count} ingredients"
 Cocktail.destroy_all
 puts "Cocktails destroyed"
 
-%w[test1 test2 test3 test4 test5].each do |c|
-  Cocktail.create(name:c)
+10.times do
+  new_cocktail = Cocktail.new(name: Faker::FamilyGuy.character)
+  url = "https://images.unsplash.com/photo-1438522014717-d7ce32b9bab9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=55cb1a59dd5a3cecf474342bc3048ea7&auto=format&fit=crop&w=1349&q=80"
+  new_cocktail.remote_photo_url = url
+  new_cocktail.save
 end
 
 puts "created #{Cocktail.all.count} cocktails"
