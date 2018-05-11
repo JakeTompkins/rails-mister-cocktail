@@ -1,21 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-
-    <%= simple_form_for(@cocktail) do |f| %>
-        <%= f.input :name %>
-      <ul>
-      <%= f.simple_fields_for :doses, @cocktail.doses do |d| %>
-        <li>
-          <%= d.input :ingredient_id, collection: Ingredient.all %>
-          <%= d.input :description, placeholder: "1 shot, 5oz, a shitload?" %>
-        </li>
+<%= link_to 'Back', cocktails_path, class: "btn btn-lg transparent back-link" %>
+<div class="new-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+      <%= simple_form_for(@cocktail, remote:true) do |f| %>
+          <%= f.input :name, label: false, placeholder: "Name your cocktail" %>
+          <%= f.simple_fields_for(:doses, @cocktail.doses) do |d| %>
+              <%= d.input :ingredient_id, collection: Ingredient.all, label: false, prompt: "Select an ingredient" %>
+              <%= d.input :description, placeholder: "1 shot, 5oz, a shitload?", label: false %>
+          <% end %>
+          <%= f.button :submit, id: "submit-button", value: "Add ingredient" %>
       <% end %>
-      </ul>
-
-      <%= f.button :submit %>
-    <% end %>
-
     </div>
   </div>
 </div>

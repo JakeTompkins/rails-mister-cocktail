@@ -7,4 +7,10 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+
+let refreshForm = () => {
+  ingredientsField = document.getElementById("cocktail_doses_attributes_0_ingredient_id");
+  descriptionField = document.getElementById("cocktail_doses_attributes_0_description");
+  ingredientsField.selectedIndex = 0;
+  descriptionField.value = "";
+};

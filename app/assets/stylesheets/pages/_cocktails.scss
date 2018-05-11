@@ -53,10 +53,23 @@ a:hover {
 
 // New view
 
-.simple_form {
+.new-wrapper {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.simple_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.simple_form .form-group {
+  display: flex;
+  justify-content: center;
 }
 
 .simple_form div.input {
@@ -106,6 +119,31 @@ label.collection_radio_buttons {
   font-style: italic;
 }
 
+.simple_form input {
+  margin: 10px;
+}
+
+.add-button, .save-button {
+  color: white;
+  border: solid 1px white;
+}
+
+.add-button:hover, .save-button:hover {
+  text-decoration: none;
+  color: darkgray;
+}
+
+select {
+  margin: 10px;
+}
+
+input.btn {
+  color: white;
+  background: transparent;
+  border: solid 1px white;
+  margin: 0;
+}
+
 input.radio {
   margin-right: 5px;
   vertical-align: -3px;
@@ -121,4 +159,20 @@ label.collection_check_boxes {
   margin: 0;
   vertical-align: -2px;
   margin-left: 2px;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
 }

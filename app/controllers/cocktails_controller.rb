@@ -16,8 +16,19 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    if @cocktail.save
-      render :new
+    if @cocktail.valid?
+      @cocktail.save
+      respond_to do |format|
+        format.html { render new }
+        format.js  # <-- will render `app/views/cocktails/create.js.erb`
+      end
+    else
+      @cocktail = Cocktail.find_by(name: @cocktail.name)
+      @cocktail.update(cocktail_params)
+      respond_to do |format|
+        format.html { render new }
+        format.js  # <-- idem
+      end
     end
   end
 
