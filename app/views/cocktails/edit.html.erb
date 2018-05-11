@@ -1,0 +1,9 @@
+<%= simple_form_for(@cocktail) do |f| %>
+  <%= f.input :name %>
+    <%= f.simple_fields_for :doses do |d| %>
+    <%= d.input :ingredient_id, collection: Ingredient.all.map { |i| i} %>
+    <%= d.input :description, placeholder: "1 shot, 5oz, a buckton?" %>
+    <%= d.button :submit %>
+    <% end %>
+  <%= f.button :submit %>
+<% end %>

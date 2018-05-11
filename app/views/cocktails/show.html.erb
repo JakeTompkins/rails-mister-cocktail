@@ -1,9 +1,6 @@
 <div class="details-container">
-  <h1><%= @cocktail.name %></h1>
-
-  <% @cocktail.doses.each do |dose| %>
-    <%= dose.description %>
-    <%= dose.ingredient.name %>
-    <%= link_to 'Delete', cocktail_dose_path(@cocktail, dose), method: :Delete %>
-  <% end %>
+  <%= render partial: '/components/cocktail-card-big', locals: { cocktail: @cocktail } %>
 </div>
+
+
+
