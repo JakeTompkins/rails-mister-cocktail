@@ -124,12 +124,13 @@ label.collection_radio_buttons {
   margin: 10px;
 }
 
-.add-button, .save-button {
+.add-button, #save-button, #done_button {
+  margin-left: 0 !important;
   color: white;
   border: solid 1px white;
 }
 
-.add-button:hover, .save-button:hover {
+.add-button:hover, #save-button:hover, #done_button:hover {
   text-decoration: none;
   color: darkgray;
 }
@@ -176,4 +177,10 @@ label.collection_check_boxes {
 
 :-ms-input-placeholder {
    text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -1,6 +1,7 @@
 <%= link_to 'Back', cocktails_path, class: "btn btn-lg transparent back-link" %>
 <div class="new-wrapper">
   <div class="container">
+  <div class="row"><div class="col-xs-12"><h1 style="text-align: center; color: white; margin-bottom: 15px:">Craft Your Masterpiece</h1></div></div>
     <div class="row">
       <div class="col-xs-6 col-xs-offset-3">
       <%= simple_form_for(@cocktail, remote:true) do |f| %>
@@ -11,7 +12,10 @@
           <% end %>
           <%= f.input :photo, label: false, class: "btn", style: "background: transparent; border: solid 1px white; color: white;" %>
           <%= f.input :photo_cache, as: :hidden %>
-          <%= f.button :submit, id: "submit-button", value: "Add ingredient" %>
+          <div class="buttons">
+            <%= f.button :submit, id: "submit-button", value: "Add ingredient" %>
+            <%= link_to 'Done', root_path, id: "done_button", class: "btn" %>
+          </div>
       <% end %>
     </div>
   </div>
