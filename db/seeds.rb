@@ -12,7 +12,7 @@ require 'json'
 Ingredient.destroy_all
 puts "Ingredients destroyed"
 
-drinks_json = File.read('/home/jake/code/JakeTompkins/rails-mister-cocktail/db/ingredients.json')
+drinks_json = open('http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read
 json = JSON.parse(drinks_json)
 drinks = json["drinks"]
 drinks.each do |d|
