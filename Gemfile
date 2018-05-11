@@ -66,3 +66,5 @@ gem 'simple_form'
 
 # Security
 gem 'figaro'
+
+# Image uploads
