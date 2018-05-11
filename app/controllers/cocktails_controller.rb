@@ -37,6 +37,12 @@ class CocktailsController < ApplicationController
     render :new
   end
 
+  def search
+    stem = params[:stem]
+    @cocktails = Cocktail.where(["name LIKE '%?%'", stem])
+    json_response(@cocktails)
+  end
+
 
 
   private
