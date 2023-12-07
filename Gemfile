@@ -68,7 +68,7 @@ gem 'simple_form'
 gem 'figaro'
 
 # Image uploads
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 2.2'
 gem 'cloudinary'
 
 # Randomizer
